@@ -13,6 +13,11 @@ project(
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
 
+# ---- Dependencies ----
+find_package(glfw3 3.3 REQUIRED)
+find_package(Vulkan REQUIRED)
+find_package(glm REQUIRED)
+
 # ---- Declare library ----
 
 add_library(
@@ -37,7 +42,14 @@ set_property(TARGET mfw_exe PROPERTY OUTPUT_NAME mfw)
 
 target_compile_features(mfw_exe PRIVATE cxx_std_20)
 
-target_link_libraries(mfw_exe PRIVATE mfw_lib)
+target_link_libraries(
+  mfw_exe 
+  PRIVATE 
+  mfw_lib 
+  glm::glm
+  glfw 
+  Vulkan::Vulkan
+)
 
 # ---- Install rules ----
 
