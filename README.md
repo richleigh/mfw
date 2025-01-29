@@ -1,59 +1,19 @@
-# Project Title
+# mfw
 
-A short description about the project and/or client.
+This is the mfw project.
 
-## Getting Started
+# Building and installing
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+See the [BUILDING][defbuild] document.
 
-### Prerequisites
+# Contributing
 
-The things you need before installing the software.
+See the [CONTRIBUTING][defcontribute] document.
 
-* You need this
-* And you need this
-* Oh, and don't forget this
+# Licensing
 
-### Installation
+See the [LICENSE][deflicense] document.
 
-A step by step guide that will tell you how to get the development environment up and running.
-
-```
-$ First step
-$ Another step
-$ Final step
-```
-
-## Usage
-
-A few examples of useful commands and/or tasks.
-
-```
-$ First example
-$ Second example
-$ And keep this in mind
-```
-
-## Deployment
-
-Additional notes on how to deploy this on a live or release system. Explaining the most important branches, what pipelines they trigger and how to update the database (if anything special).
-
-### Server
-
-* Live:
-* Release:
-* Development:
-
-### Branches
-
-* Master:
-* Feature:
-* Bugfix:
-* etc...
-
-## Additional Documentation and Acknowledgments
-
-* Project folder on server:
-* Confluence link:
-* Asana board:
-* etc...
+[defbuild]: BUILDING.md
+[defcontribute]: CONTRIBUTING.md
+[deflicense]: LICENSE.txt
