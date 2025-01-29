@@ -11,12 +11,18 @@ project(
 )
 
 include(cmake/project-is-top-level.cmake)
+include(cmake/shader-compile.cmake)
 include(cmake/variables.cmake)
 
 # ---- Dependencies ----
 find_package(glfw3 3.3 REQUIRED)
-find_package(Vulkan REQUIRED)
+find_package(Vulkan REQUIRED COMPONENTS glslc)
 find_package(glm REQUIRED)
+
+find_program(glslc_executable NAMES glslc HINTS Vulkan::glslc)
+if(NOT glslc_executable)
+  message(FATAL_ERROR "glslc not found!")
+endif()
 
 # ---- Declare library ----
 
@@ -50,6 +56,17 @@ target_link_libraries(
   glfw 
   Vulkan::Vulkan
 )
+
+# ---- Compile shaders ----
+compile_shader(
+    mfw_exe
+    ENV vulkan1.2
+    FORMAT bin
+    SOURCES
+    "shader/shader.vert"
+    "shader/shader.frag"
+)
+
 
 # ---- Install rules ----
 
